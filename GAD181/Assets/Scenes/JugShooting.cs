@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
-public class EnemyShooting : MonoBehaviour
+public class JugShooting : MonoBehaviour
 {
     public Transform shootPoint;
     public Transform gunPoint;
@@ -12,14 +12,14 @@ public class EnemyShooting : MonoBehaviour
     public Vector3 spread = new Vector3(0.06f, 0.06f, 0.06f);
 
     public TrailRenderer bulletTrail;
-    public int ammo = 30;
+    public int ammo = 150;
 
     private int currentAmmo;
-    private EnemyAiRef enemyAiRef;
+    private JugAiRef jugAiRef;
 
     public void Awake()
     {
-        enemyAiRef = GetComponent<EnemyAiRef>();
+        jugAiRef = GetComponent<JugAiRef>();
         Reload();
     }
     public void Shoot()
@@ -49,7 +49,7 @@ public class EnemyShooting : MonoBehaviour
     {
         Vector3 direction = transform.forward;
         direction += new Vector3(
-            Random.Range(-spread.x, spread.x),Random.Range(-spread.y, spread.y), Random.Range(-spread.z, spread.z));
+            Random.Range(-spread.x, spread.x), Random.Range(-spread.y, spread.y), Random.Range(-spread.z, spread.z));
         direction.Normalize();
         return direction;
     }
@@ -60,7 +60,7 @@ public class EnemyShooting : MonoBehaviour
 
         while (time < 1f)
         {
-            trail.transform.position = Vector3.Lerp(startPosition, hit.point,time);
+            trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
             time += Time.deltaTime / trail.time;
             yield return null;
         }
@@ -69,3 +69,4 @@ public class EnemyShooting : MonoBehaviour
         Destroy(trail.gameObject, trail.time);
     }
 }
+

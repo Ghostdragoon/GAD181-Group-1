@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAiRef : MonoBehaviour
+public class JugAiRef : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     public Animator animator;
-    public EnemyShooting shooter;
+    public JugShooting jugShooter;
 
     public float pathUpdateDelay = 0.2f;
 
@@ -16,7 +16,8 @@ public class EnemyAiRef : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        shooter = GetComponent<EnemyShooting>();
+        jugShooter = GetComponent<JugShooting>();
 
     }
 }
+

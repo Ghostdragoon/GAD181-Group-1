@@ -18,7 +18,7 @@ public class EnemyAiNew : MonoBehaviour
 
         CoverArea coverArea = FindObjectOfType<CoverArea>();
 
-        var runToCover = new EnemyState_RunToCover (enemyReferences, coverArea);
+        var runToCover = new EnemyState_RunToCover(enemyReferences, coverArea);
         var delayAfterRun = new EnemyState_Delay(2f);
         var cover = new EnemyState_Cover(enemyReferences);
         
