@@ -25,7 +25,7 @@ public class JugState_Cover : IState
         stateMachine.SetState(jugShoot);
 
         void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
-        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
+        
     }
 
 

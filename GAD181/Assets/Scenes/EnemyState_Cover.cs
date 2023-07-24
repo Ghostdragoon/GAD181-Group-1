@@ -25,7 +25,7 @@ public class EnemyState_Cover : IState
         stateMachine.SetState(enemyShoot);
 
         void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
-        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
+        
     }
     
     

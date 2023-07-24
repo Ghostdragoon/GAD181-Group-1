@@ -29,9 +29,8 @@ public class JugnautAi : MonoBehaviour
         stateMachine.SetState(runTojugCover);
 
         void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
-        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
+        
     }
-
     void Update()
     {
         stateMachine.Tick();

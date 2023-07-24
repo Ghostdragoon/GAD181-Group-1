@@ -31,7 +31,7 @@ public class EnemyAiNew : MonoBehaviour
         stateMachine.SetState(runToCover);
 
         void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from,to, condition);
-        void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
+        
     }
 
     void Update()
