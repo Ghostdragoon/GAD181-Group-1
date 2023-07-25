@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
    private PlayerMotor playerMotor;
    private PlayerInput.OnFootActions onFoot;
    private PlayerLook playerLook;
+   
 
    void Awake()
    {
