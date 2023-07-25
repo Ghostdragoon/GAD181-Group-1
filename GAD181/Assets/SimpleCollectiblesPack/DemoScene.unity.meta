@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 276137fb47c467d479d0bd7b6732edf9
+<<<<<<<< Updated upstream:GAD181/Assets/SimpleCollectiblesPack/DemoScene.unity.meta
+guid: 92d4f481deaf0ac409a83e03eb49d5e9
 timeCreated: 1531340072
 licenseType: Store
+========
+guid: 98f89f3b6ce2800479ea621b4ad1bad1
+>>>>>>>> Stashed changes:GAD181/Assets/ScifiOfficeLite/Scene/Demo.unity.meta
 DefaultImporter:
   userData: 
   assetBundleName: 
