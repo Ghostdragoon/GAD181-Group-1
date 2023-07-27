@@ -1,0 +1,8 @@
+Asset consists of: 
+5 base meshes
+54 animations
+4k pbr metal\rough textures for body and armor (total-30) 
+2k pbr metal\rough textures for weapons (total-15)
+Prefabs for 
+Every base mesh with color variations
+assembled prefabs with animation controllers

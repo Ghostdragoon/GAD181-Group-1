@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: dd3d1bad0e73c7741a60afbc931cb769
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base_mesh
+    100002: body_base
+    100004: Body_cntrllers
+    100006: Bottom_jaw
+    100008: Bottom_teeth
+    100010: bow
+    100012: bow_arrows_pack
+    100014: bow_bot_elbow_p1
+    100016: bow_bot_elbow_p2
+    100018: bow_bot_elbow_p3
+    100020: bow_mid
+    100022: bow_root
+    100024: bow_single_arrow
+    100026: bow_top_elbow_p1
+    100028: bow_top_elbow_p2
+    100030: bow_top_elbow_p3
+    100032: chest_cntr
+    100034: chest_cntr 1
+    100036: Eyes
+    100038: Head
+    100040: hips_cntr
+    100042: hips_cntr 1
+    100044: L_arm
+    100046: L_big_finger
+    100048: L_big_finger_p1
+    100050: L_big_finger_p2
+    100052: L_eye_1
+    100054: L_eye_2
+    100056: L_foot
+    100058: L_forearm
+    100060: L_hand
+    100062: L_hip
+    100064: L_knee
+    100066: L_mabuta
+    100068: L_pinky_finger
+    100070: L_pinky_finger_p1
+    100072: L_pinky_finger_p2
+    100074: L_point_finger
+    100076: L_point_finger_p1
+    100078: L_point_finger_p2
+    100080: L_ring_finger
+    100082: L_ring_finger_p1
+    100084: L_ring_finger_p2
+    100086: L_shoulder
+    100088: L_toes
+    100090: L_waist_armor_holder
+    100092: Left_hand_control_group
+    100094: //RootNode
+    100096: Neck
+    100098: nurbsCircle4
+    100100: nurbsCircle5
+    100102: nurbsCircle6
+    100104: R_arm
+    100106: R_big_finger
+    100108: R_big_finger_p1
+    100110: R_big_finger_p2
+    100112: R_eye_1
+    100114: R_eye_2
+    100116: R_foot
+    100118: R_forearm
+    100120: R_hand
+    100122: R_hip
+    100124: R_knee
+    100126: R_mabuta
+    100128: R_pinky_finger
+    100130: R_pinky_finger_p1
+    100132: R_pinky_finger_p2
+    100134: R_point_finger
+    100136: R_point_finger_p1
+    100138: R_point_finger_p2
+    100140: R_ring_finger
+    100142: R_ring_finger_p1
+    100144: R_ring_finger_p2
+    100146: R_shoulder
+    100148: R_toes
+    100150: R_waist_armor_holder
+    100152: Rig
+    100154: Root
+    100156: Skull
+    100158: Spine_middle
+    100160: spine_middle_part_cntr
+    100162: spine_middle_part_cntr 1
+    100164: Spine_top
+    100166: Tail
+    100168: Tail_1
+    100170: Tail_2
+    100172: Tail_3
+    100174: Tail_4
+    100176: Tongue
+    100178: Tongue_1
+    100180: Tongue_2
+    100182: Waist
+    100184: Waist_armor_holder
+    400000: base_mesh
+    400002: body_base
+    400004: Body_cntrllers
+    400006: Bottom_jaw
+    400008: Bottom_teeth
+    400010: bow
+    400012: bow_arrows_pack
+    400014: bow_bot_elbow_p1
+    400016: bow_bot_elbow_p2
+    400018: bow_bot_elbow_p3
+    400020: bow_mid
+    400022: bow_root
+    400024: bow_single_arrow
+    400026: bow_top_elbow_p1
+    400028: bow_top_elbow_p2
+    400030: bow_top_elbow_p3
+    400032: chest_cntr
+    400034: chest_cntr 1
+    400036: Eyes
+    400038: Head
+    400040: hips_cntr
+    400042: hips_cntr 1
+    400044: L_arm
+    400046: L_big_finger
+    400048: L_big_finger_p1
+    400050: L_big_finger_p2
+    400052: L_eye_1
+    400054: L_eye_2
+    400056: L_foot
+    400058: L_forearm
+    400060: L_hand
+    400062: L_hip
+    400064: L_knee
+    400066: L_mabuta
+    400068: L_pinky_finger
+    400070: L_pinky_finger_p1
+    400072: L_pinky_finger_p2
+    400074: L_point_finger
+    400076: L_point_finger_p1
+    400078: L_point_finger_p2
+    400080: L_ring_finger
+    400082: L_ring_finger_p1
+    400084: L_ring_finger_p2
+    400086: L_shoulder
+    400088: L_toes
+    400090: L_waist_armor_holder
+    400092: Left_hand_control_group
+    400094: //RootNode
+    400096: Neck
+    400098: nurbsCircle4
+    400100: nurbsCircle5
+    400102: nurbsCircle6
+    400104: R_arm
+    400106: R_big_finger
+    400108: R_big_finger_p1
+    400110: R_big_finger_p2
+    400112: R_eye_1
+    400114: R_eye_2
+    400116: R_foot
+    400118: R_forearm
+    400120: R_hand
+    400122: R_hip
+    400124: R_knee
+    400126: R_mabuta
+    400128: R_pinky_finger
+    400130: R_pinky_finger_p1
+    400132: R_pinky_finger_p2
+    400134: R_point_finger
+    400136: R_point_finger_p1
+    400138: R_point_finger_p2
+    400140: R_ring_finger
+    400142: R_ring_finger_p1
+    400144: R_ring_finger_p2
+    400146: R_shoulder
+    400148: R_toes
+    400150: R_waist_armor_holder
+    400152: Rig
+    400154: Root
+    400156: Skull
+    400158: Spine_middle
+    400160: spine_middle_part_cntr
+    400162: spine_middle_part_cntr 1
+    400164: Spine_top
+    400166: Tail
+    400168: Tail_1
+    400170: Tail_2
+    400172: Tail_3
+    400174: Tail_4
+    400176: Tongue
+    400178: Tongue_1
+    400180: Tongue_2
+    400182: Waist
+    400184: Waist_armor_holder
+    7400000: death_1
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a836aa6d92debe947876f2c6a2276f83,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
