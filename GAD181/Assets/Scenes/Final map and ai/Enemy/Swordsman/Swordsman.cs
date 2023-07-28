@@ -38,7 +38,7 @@ public class Swordsman : MonoBehaviour
         }
         else
         {
-            anim.SetBool("playerInRange", false);
+            anim.SetBool("playerInVision", false);
             Debug.Log("Searching for player");
             Patrol();
         } 
@@ -61,7 +61,7 @@ public class Swordsman : MonoBehaviour
 
     public void Chase()
     {
-        anim.SetBool("isChasing", true);
+        anim.SetBool("Player, true);
     }
 
     public void Patrol()
@@ -69,3 +69,17 @@ public class Swordsman : MonoBehaviour
         anim.SetBool("isChasing", false);
     }
 }
+
+
+/*  if(rifleMan.Agent.remainingDistance < 0.2f)
+        {
+            if(waypointIndex < rifleMan.path.waypoints.Count - 1)
+            {
+                waypointIndex++;
+            }
+            else
+            {
+                waypointIndex = 0;
+            }
+            rifleMan.Agent.SetDestination(rifleMan.path.waypoints[waypointIndex].position);
+        }*/
