@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    [SerializeField]public Camera cam;
+    [SerializeField] public Camera cam;
     private float xRotation = 0f;
 
     public float xSens = 30f;
     public float ySens = 30f;
 
+    // Flag to disable camera rotation
+    public bool disableRotation = false;
+
     public void ProcessLook(Vector2 input)
     {
-        float mouseX = input.x; 
+        if (disableRotation)
+        {
+            return;
+        }
+
+        float mouseX = input.x;
         float mouseY = input.y;
 
         xRotation -= mouseY;
@@ -22,3 +30,4 @@ public class PlayerLook : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX * Time.deltaTime * xSens);
     }
 }
+

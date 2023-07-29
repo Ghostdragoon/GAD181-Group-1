@@ -1,0 +1,54 @@
+{
+    "name": "UIinputActions",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "c447d37e-a62d-4d41-9275-bd467d9310ec",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "b39c37f8-0a9e-4d59-9751-1d2c09b8c0f7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "9b984fa1-2074-44d8-becd-3c87dbae3c60",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a4237755-3ab6-4b63-86d2-748bfc315345",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec26b308-f6c9-418f-b1c9-734ae00cfbf8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
