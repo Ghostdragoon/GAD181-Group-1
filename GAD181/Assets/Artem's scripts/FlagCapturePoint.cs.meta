@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:GAD181/Assets/SimpleCollectiblesPack/SimpleCollectibleScript.cs.meta
+guid: 4f913a12fd045c044bc4d62469b153ed
+timeCreated: 1531417221
+licenseType: Store
+========
 guid: 837268776f2303542a66c58f922ec195
+>>>>>>>> Stashed changes:GAD181/Assets/FlagCapturePoint.cs.meta
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
