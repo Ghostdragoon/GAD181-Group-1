@@ -27,12 +27,4 @@ public class MeteorCollider : MonoBehaviour
             }
         }
     }
-    // public void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.gameObject.tag == "Player")
-    //     {
-    //         other.gameObject.GetComponent<PlayerStats>().TakeDamage(10);
-    //     }
-    // }
-
 }

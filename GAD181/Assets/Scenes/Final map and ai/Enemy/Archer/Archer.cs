@@ -10,6 +10,8 @@ public class Archer : MonoBehaviour
     public Animator anim;
     public float ShootInterval = 4f;
     public float ShootTimer;
+    public GameObject Arrow;
+    public Transform ArrowSpace;
 
 
     public void Start()
@@ -31,6 +33,8 @@ public class Archer : MonoBehaviour
                 ShootTimer = 0f;
                 anim.SetTrigger("Shoot");
                 Debug.Log("Shooting");
+                Instantiate(Arrow, ArrowSpace.transform.position, Quaternion.identity);
+                Arrow.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
             }
             else
             {
