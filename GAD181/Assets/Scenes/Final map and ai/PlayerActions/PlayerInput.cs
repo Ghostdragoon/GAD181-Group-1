@@ -71,6 +71,33 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""92f46c7d-1eee-4871-9776-e3e51bb44fcd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UI"",
+                    ""type"": ""Value"",
+                    ""id"": ""703f9308-545f-4905-afe0-4691a9813117"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""646b8bcb-a423-4495-9e5f-0d51e6ffedb8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +199,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecec540b-ab1e-4cbe-990d-7bff4922f13e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53845264-73fd-47e3-b5fa-2fca71c9b598"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc14c994-1e70-44a2-ac4b-e0c71b076a14"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +245,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
         m_OnFoot_Sprint = m_OnFoot.FindAction("Sprint", throwIfNotFound: true);
         m_OnFoot_Crouch = m_OnFoot.FindAction("Crouch", throwIfNotFound: true);
+        m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
+        m_OnFoot_UI = m_OnFoot.FindAction("UI", throwIfNotFound: true);
+        m_OnFoot_Click = m_OnFoot.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +312,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Look;
     private readonly InputAction m_OnFoot_Sprint;
     private readonly InputAction m_OnFoot_Crouch;
+    private readonly InputAction m_OnFoot_Interact;
+    private readonly InputAction m_OnFoot_UI;
+    private readonly InputAction m_OnFoot_Click;
     public struct OnFootActions
     {
         private @PlayerInput m_Wrapper;
@@ -258,6 +324,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_OnFoot_Look;
         public InputAction @Sprint => m_Wrapper.m_OnFoot_Sprint;
         public InputAction @Crouch => m_Wrapper.m_OnFoot_Crouch;
+        public InputAction @Interact => m_Wrapper.m_OnFoot_Interact;
+        public InputAction @UI => m_Wrapper.m_OnFoot_UI;
+        public InputAction @Click => m_Wrapper.m_OnFoot_Click;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -282,6 +351,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Crouch.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnCrouch;
                 @Crouch.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnCrouch;
                 @Crouch.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnCrouch;
+                @Interact.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInteract;
+                @UI.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnUI;
+                @UI.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnUI;
+                @UI.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnUI;
+                @Click.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnClick;
             }
             m_Wrapper.m_OnFootActionsCallbackInterface = instance;
             if (instance != null)
@@ -301,6 +379,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Crouch.started += instance.OnCrouch;
                 @Crouch.performed += instance.OnCrouch;
                 @Crouch.canceled += instance.OnCrouch;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @UI.started += instance.OnUI;
+                @UI.performed += instance.OnUI;
+                @UI.canceled += instance.OnUI;
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
             }
         }
     }
@@ -312,5 +399,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnUI(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }
