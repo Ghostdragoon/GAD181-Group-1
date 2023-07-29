@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     public Transform playerCam;
@@ -37,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+    public int maxHealth = 10;
+    public int currentHealth = 10;
+    public HealthBar healthBar;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         playerScale = transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        currentHealth = maxHealth;
+        healthBar.MaxHealth(maxHealth);
     }
 
 
@@ -59,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
     {
         MyInput();
         Look();
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            TakeDamage(2);
+        }
     }
 
     private void MyInput()
@@ -251,6 +262,13 @@ public class PlayerMovement : MonoBehaviour
     private void StopGrounded()
     {
         grounded = false;
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
     }
 
 }
