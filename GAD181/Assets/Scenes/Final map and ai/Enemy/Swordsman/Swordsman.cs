@@ -61,7 +61,7 @@ public class Swordsman : MonoBehaviour
 
     public void Chase()
     {
-        anim.SetBool("Player, true);
+       
     }
 
     public void Patrol()
