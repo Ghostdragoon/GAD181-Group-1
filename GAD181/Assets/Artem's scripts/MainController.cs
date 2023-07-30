@@ -52,11 +52,7 @@ public class MainController : MonoBehaviour
                 Debug.Log("Interactable object detected and player is nearby");
                 mainMenuUI.SetActive(true);
             }
-            else if (interactableObject.CompareTag("Bomb"))
-            {
-                Debug.Log("Bomb object detected");
-                interactableObject.GetComponent<Bomb>().Interact();
-            }
+            
         }
         else
         {
