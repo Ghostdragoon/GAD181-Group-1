@@ -49,4 +49,5 @@ public class Archer : MonoBehaviour
             Debug.Log("Searching for player");
         }
     }
+
 }

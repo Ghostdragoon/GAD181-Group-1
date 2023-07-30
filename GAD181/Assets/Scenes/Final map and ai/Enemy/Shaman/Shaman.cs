@@ -14,6 +14,7 @@ public class Shaman : MonoBehaviour
     public GameObject Flame;
     public GameObject Meteor;
 
+
     // raycast to find game object tagged player 
     public void Start()
     {
@@ -52,4 +53,6 @@ public class Shaman : MonoBehaviour
             anim.SetBool("playerInRange", false);
         }
     }
+
+   
 }

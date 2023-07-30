@@ -16,8 +16,7 @@ public class Swordsman : MonoBehaviour
     public GameObject slash;
     public Transform Slashspace;
 
-    
-    
+
 
     public void Start()
     {

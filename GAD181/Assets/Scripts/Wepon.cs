@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Wepon : MonoBehaviour
 {
-   public float damage = 1f;
+   public float damage = 5f;
 
-    public Camera playerCam;
-    
+    public GameObject playerCam;
 
     void Update()
     {
@@ -22,11 +21,15 @@ public class Wepon : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit))
         {
-            Debug.Log(hit.transform.name);
-            EnemyVer1 target = hit.transform.GetComponent<EnemyVer1>();
-            if (target != null)
+            if (hit.collider.tag == "Enemy")
             {
-                target.TakeDamage(damage);
+                //Debug.Log(hit.transform.name);
+                EnemyHealth enemyHealth = hit.transform.GetComponent<EnemyHealth>();
+
+                if (enemyHealth == true)
+                {
+                    enemyHealth.EnemyTakeDamage(damage);
+                }
             }
         }
     }
