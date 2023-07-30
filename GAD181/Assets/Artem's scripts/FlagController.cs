@@ -6,9 +6,17 @@ public class FlagController : MonoBehaviour
     public Text flagStatusText;
     public float captureTime = 5f;
 
+    // Static variable to keep track of the flag status
+    public static bool IsCaptured = false;
+
     private float currentCaptureTime = 0f;
     private bool isPlayerInside = false;
     private bool isEnemyInside = false;
+
+    void Start()
+    {
+        IsCaptured = false; // Reset the status at the start of the scene
+    }
 
     void Update()
     {
@@ -18,6 +26,8 @@ public class FlagController : MonoBehaviour
             if (currentCaptureTime >= captureTime)
             {
                 flagStatusText.text = "Flag Captured!";
+                IsCaptured = true;
+                gameObject.SetActive(false);  // Deactivate the flag
             }
             else
             {

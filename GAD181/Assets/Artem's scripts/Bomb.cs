@@ -1,11 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Bomb : MonoBehaviour
 {
     public float defuseTime = 5f; // Time required to defuse the bomb
     public float explosionTime = 10f; // Time until the bomb explodes
-    public GameObject explosionEffect; // Explosion effect prefab
+
+    // Reference to the explosion effect object in the scene
+    public GameObject explosionEffect;
+
+    // Reference to the UI text element to display bomb status
+    public Text statusText;
+
+    // Static variable to keep track of the bomb status
+    public static bool IsDefused = false;
 
     private Collider player = null;
     private float currentDefuseTime = 0f;
@@ -13,8 +22,21 @@ public class Bomb : MonoBehaviour
     private bool isDefusing = false;
     private bool hasExploded = false;
 
+    private void Start()
+    {
+        // Ensure explosion effect is initially disabled
+        explosionEffect.SetActive(false);
+        IsDefused = false; // Reset the status at the start of the scene
+    }
+
     private void Update()
     {
+        // Check if E key is pressed and player is near
+        if (player != null && Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            isDefusing = !isDefusing; // Toggle defusing status
+        }
+
         if (isDefusing)
         {
             currentDefuseTime += Time.deltaTime;
@@ -22,7 +44,13 @@ public class Bomb : MonoBehaviour
             {
                 // Defusing successful
                 Debug.Log("Bomb defused!");
-                Destroy(gameObject);
+                statusText.text = "Bomb status: Defused";
+                IsDefused = true;
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                statusText.text = "Bomb status: Defusing";
             }
         }
         else
@@ -32,6 +60,10 @@ public class Bomb : MonoBehaviour
             {
                 // Bomb explodes
                 Explode();
+            }
+            else
+            {
+                statusText.text = "Bomb status: Armed";
             }
         }
     }
@@ -53,19 +85,31 @@ public class Bomb : MonoBehaviour
         }
     }
 
-    public void Interact()
-    {
-        if (player != null && !hasExploded)
-        {
-            isDefusing = true;
-        }
-    }
-
     private void Explode()
     {
         Debug.Log("Bomb exploded!");
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        statusText.text = "Bomb status: Exploded";
+
+        // Enable explosion effect
+        explosionEffect.SetActive(true);
+
+        // Unparent the explosion effect
+        explosionEffect.transform.parent = null;
+
+        // Schedule to disable explosion effect after 2 seconds
+        Invoke("DisableExplosionEffect", 2f);
+
         Destroy(gameObject);
         hasExploded = true;
     }
+
+
+    private void DisableExplosionEffect()
+    {
+        // Disable explosion effect
+        explosionEffect.SetActive(false);
+    }
 }
+
+
+

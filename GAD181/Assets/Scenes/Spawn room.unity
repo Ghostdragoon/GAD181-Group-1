@@ -1237,12 +1237,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4629752262115116204, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2061600497}
+    - target: {fileID: 4629752262115116204, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
       propertyPath: disableRotation
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4629752263348738015, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
       propertyPath: m_TagString
       value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629752263348738016, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6515010380269223605, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
       propertyPath: m_Name
@@ -2967,7 +2975,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
 --- !u!224 &1950940568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3127,3 +3135,8 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+--- !u!1 &2061600497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4629752263348738015, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
+  m_PrefabInstance: {fileID: 597984031}
+  m_PrefabAsset: {fileID: 0}
