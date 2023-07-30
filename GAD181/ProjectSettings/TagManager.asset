@@ -4,17 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Target
-  - path
-  - Path
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - Interactable
+  - Ground
   - 
   - 
   - 
