@@ -1,151 +1,431 @@
 fileFormatVersion: 2
 guid: 00d69bb39b4067d47b1e300dc5266456
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: body_base
-    100004: Bottom_jaw
-    100006: Bottom_teeth
-    100008: Eyes
-    100010: Head
-    100012: L_arm
-    100014: L_big_finger
-    100016: L_big_finger_p1
-    100018: L_big_finger_p2
-    100020: L_eye_1
-    100022: L_eye_2
-    100024: L_foot
-    100026: L_forearm
-    100028: L_hand
-    100030: L_hip
-    100032: L_knee
-    100034: L_mabuta
-    100036: L_pinky_finger
-    100038: L_pinky_finger_p1
-    100040: L_pinky_finger_p2
-    100042: L_point_finger
-    100044: L_point_finger_p1
-    100046: L_point_finger_p2
-    100048: L_ring_finger
-    100050: L_ring_finger_p1
-    100052: L_ring_finger_p2
-    100054: L_shoulder
-    100056: L_toes
-    100058: L_waist_armor_holder
-    100060: Neck
-    100062: R_arm
-    100064: R_big_finger
-    100066: R_big_finger_p1
-    100068: R_big_finger_p2
-    100070: R_eye_1
-    100072: R_eye_2
-    100074: R_foot
-    100076: R_forearm
-    100078: R_hand
-    100080: R_hip
-    100082: R_knee
-    100084: R_mabuta
-    100086: R_pinky_finger
-    100088: R_pinky_finger_p1
-    100090: R_pinky_finger_p2
-    100092: R_point_finger
-    100094: R_point_finger_p1
-    100096: R_point_finger_p2
-    100098: R_ring_finger
-    100100: R_ring_finger_p1
-    100102: R_ring_finger_p2
-    100104: R_shoulder
-    100106: R_toes
-    100108: R_waist_armor_holder
-    100110: Root
-    100112: Skull
-    100114: Spine_middle
-    100116: Spine_top
-    100118: Tail
-    100120: Tail_1
-    100122: Tail_2
-    100124: Tail_3
-    100126: Tail_4
-    100128: Tongue
-    100130: Tongue_1
-    100132: Tongue_2
-    100134: Waist
-    100136: Waist_armor_holder
-    400000: //RootNode
-    400002: body_base
-    400004: Bottom_jaw
-    400006: Bottom_teeth
-    400008: Eyes
-    400010: Head
-    400012: L_arm
-    400014: L_big_finger
-    400016: L_big_finger_p1
-    400018: L_big_finger_p2
-    400020: L_eye_1
-    400022: L_eye_2
-    400024: L_foot
-    400026: L_forearm
-    400028: L_hand
-    400030: L_hip
-    400032: L_knee
-    400034: L_mabuta
-    400036: L_pinky_finger
-    400038: L_pinky_finger_p1
-    400040: L_pinky_finger_p2
-    400042: L_point_finger
-    400044: L_point_finger_p1
-    400046: L_point_finger_p2
-    400048: L_ring_finger
-    400050: L_ring_finger_p1
-    400052: L_ring_finger_p2
-    400054: L_shoulder
-    400056: L_toes
-    400058: L_waist_armor_holder
-    400060: Neck
-    400062: R_arm
-    400064: R_big_finger
-    400066: R_big_finger_p1
-    400068: R_big_finger_p2
-    400070: R_eye_1
-    400072: R_eye_2
-    400074: R_foot
-    400076: R_forearm
-    400078: R_hand
-    400080: R_hip
-    400082: R_knee
-    400084: R_mabuta
-    400086: R_pinky_finger
-    400088: R_pinky_finger_p1
-    400090: R_pinky_finger_p2
-    400092: R_point_finger
-    400094: R_point_finger_p1
-    400096: R_point_finger_p2
-    400098: R_ring_finger
-    400100: R_ring_finger_p1
-    400102: R_ring_finger_p2
-    400104: R_shoulder
-    400106: R_toes
-    400108: R_waist_armor_holder
-    400110: Root
-    400112: Skull
-    400114: Spine_middle
-    400116: Spine_top
-    400118: Tail
-    400120: Tail_1
-    400122: Tail_2
-    400124: Tail_3
-    400126: Tail_4
-    400128: Tongue
-    400130: Tongue_1
-    400132: Tongue_2
-    400134: Waist
-    400136: Waist_armor_holder
-    7400000: run_1
-    9500000: //RootNode
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: body_base
+  - first:
+      1: 100004
+    second: Bottom_jaw
+  - first:
+      1: 100006
+    second: Bottom_teeth
+  - first:
+      1: 100008
+    second: Eyes
+  - first:
+      1: 100010
+    second: Head
+  - first:
+      1: 100012
+    second: L_arm
+  - first:
+      1: 100014
+    second: L_big_finger
+  - first:
+      1: 100016
+    second: L_big_finger_p1
+  - first:
+      1: 100018
+    second: L_big_finger_p2
+  - first:
+      1: 100020
+    second: L_eye_1
+  - first:
+      1: 100022
+    second: L_eye_2
+  - first:
+      1: 100024
+    second: L_foot
+  - first:
+      1: 100026
+    second: L_forearm
+  - first:
+      1: 100028
+    second: L_hand
+  - first:
+      1: 100030
+    second: L_hip
+  - first:
+      1: 100032
+    second: L_knee
+  - first:
+      1: 100034
+    second: L_mabuta
+  - first:
+      1: 100036
+    second: L_pinky_finger
+  - first:
+      1: 100038
+    second: L_pinky_finger_p1
+  - first:
+      1: 100040
+    second: L_pinky_finger_p2
+  - first:
+      1: 100042
+    second: L_point_finger
+  - first:
+      1: 100044
+    second: L_point_finger_p1
+  - first:
+      1: 100046
+    second: L_point_finger_p2
+  - first:
+      1: 100048
+    second: L_ring_finger
+  - first:
+      1: 100050
+    second: L_ring_finger_p1
+  - first:
+      1: 100052
+    second: L_ring_finger_p2
+  - first:
+      1: 100054
+    second: L_shoulder
+  - first:
+      1: 100056
+    second: L_toes
+  - first:
+      1: 100058
+    second: L_waist_armor_holder
+  - first:
+      1: 100060
+    second: Neck
+  - first:
+      1: 100062
+    second: R_arm
+  - first:
+      1: 100064
+    second: R_big_finger
+  - first:
+      1: 100066
+    second: R_big_finger_p1
+  - first:
+      1: 100068
+    second: R_big_finger_p2
+  - first:
+      1: 100070
+    second: R_eye_1
+  - first:
+      1: 100072
+    second: R_eye_2
+  - first:
+      1: 100074
+    second: R_foot
+  - first:
+      1: 100076
+    second: R_forearm
+  - first:
+      1: 100078
+    second: R_hand
+  - first:
+      1: 100080
+    second: R_hip
+  - first:
+      1: 100082
+    second: R_knee
+  - first:
+      1: 100084
+    second: R_mabuta
+  - first:
+      1: 100086
+    second: R_pinky_finger
+  - first:
+      1: 100088
+    second: R_pinky_finger_p1
+  - first:
+      1: 100090
+    second: R_pinky_finger_p2
+  - first:
+      1: 100092
+    second: R_point_finger
+  - first:
+      1: 100094
+    second: R_point_finger_p1
+  - first:
+      1: 100096
+    second: R_point_finger_p2
+  - first:
+      1: 100098
+    second: R_ring_finger
+  - first:
+      1: 100100
+    second: R_ring_finger_p1
+  - first:
+      1: 100102
+    second: R_ring_finger_p2
+  - first:
+      1: 100104
+    second: R_shoulder
+  - first:
+      1: 100106
+    second: R_toes
+  - first:
+      1: 100108
+    second: R_waist_armor_holder
+  - first:
+      1: 100110
+    second: Root
+  - first:
+      1: 100112
+    second: Skull
+  - first:
+      1: 100114
+    second: Spine_middle
+  - first:
+      1: 100116
+    second: Spine_top
+  - first:
+      1: 100118
+    second: Tail
+  - first:
+      1: 100120
+    second: Tail_1
+  - first:
+      1: 100122
+    second: Tail_2
+  - first:
+      1: 100124
+    second: Tail_3
+  - first:
+      1: 100126
+    second: Tail_4
+  - first:
+      1: 100128
+    second: Tongue
+  - first:
+      1: 100130
+    second: Tongue_1
+  - first:
+      1: 100132
+    second: Tongue_2
+  - first:
+      1: 100134
+    second: Waist
+  - first:
+      1: 100136
+    second: Waist_armor_holder
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: body_base
+  - first:
+      4: 400004
+    second: Bottom_jaw
+  - first:
+      4: 400006
+    second: Bottom_teeth
+  - first:
+      4: 400008
+    second: Eyes
+  - first:
+      4: 400010
+    second: Head
+  - first:
+      4: 400012
+    second: L_arm
+  - first:
+      4: 400014
+    second: L_big_finger
+  - first:
+      4: 400016
+    second: L_big_finger_p1
+  - first:
+      4: 400018
+    second: L_big_finger_p2
+  - first:
+      4: 400020
+    second: L_eye_1
+  - first:
+      4: 400022
+    second: L_eye_2
+  - first:
+      4: 400024
+    second: L_foot
+  - first:
+      4: 400026
+    second: L_forearm
+  - first:
+      4: 400028
+    second: L_hand
+  - first:
+      4: 400030
+    second: L_hip
+  - first:
+      4: 400032
+    second: L_knee
+  - first:
+      4: 400034
+    second: L_mabuta
+  - first:
+      4: 400036
+    second: L_pinky_finger
+  - first:
+      4: 400038
+    second: L_pinky_finger_p1
+  - first:
+      4: 400040
+    second: L_pinky_finger_p2
+  - first:
+      4: 400042
+    second: L_point_finger
+  - first:
+      4: 400044
+    second: L_point_finger_p1
+  - first:
+      4: 400046
+    second: L_point_finger_p2
+  - first:
+      4: 400048
+    second: L_ring_finger
+  - first:
+      4: 400050
+    second: L_ring_finger_p1
+  - first:
+      4: 400052
+    second: L_ring_finger_p2
+  - first:
+      4: 400054
+    second: L_shoulder
+  - first:
+      4: 400056
+    second: L_toes
+  - first:
+      4: 400058
+    second: L_waist_armor_holder
+  - first:
+      4: 400060
+    second: Neck
+  - first:
+      4: 400062
+    second: R_arm
+  - first:
+      4: 400064
+    second: R_big_finger
+  - first:
+      4: 400066
+    second: R_big_finger_p1
+  - first:
+      4: 400068
+    second: R_big_finger_p2
+  - first:
+      4: 400070
+    second: R_eye_1
+  - first:
+      4: 400072
+    second: R_eye_2
+  - first:
+      4: 400074
+    second: R_foot
+  - first:
+      4: 400076
+    second: R_forearm
+  - first:
+      4: 400078
+    second: R_hand
+  - first:
+      4: 400080
+    second: R_hip
+  - first:
+      4: 400082
+    second: R_knee
+  - first:
+      4: 400084
+    second: R_mabuta
+  - first:
+      4: 400086
+    second: R_pinky_finger
+  - first:
+      4: 400088
+    second: R_pinky_finger_p1
+  - first:
+      4: 400090
+    second: R_pinky_finger_p2
+  - first:
+      4: 400092
+    second: R_point_finger
+  - first:
+      4: 400094
+    second: R_point_finger_p1
+  - first:
+      4: 400096
+    second: R_point_finger_p2
+  - first:
+      4: 400098
+    second: R_ring_finger
+  - first:
+      4: 400100
+    second: R_ring_finger_p1
+  - first:
+      4: 400102
+    second: R_ring_finger_p2
+  - first:
+      4: 400104
+    second: R_shoulder
+  - first:
+      4: 400106
+    second: R_toes
+  - first:
+      4: 400108
+    second: R_waist_armor_holder
+  - first:
+      4: 400110
+    second: Root
+  - first:
+      4: 400112
+    second: Skull
+  - first:
+      4: 400114
+    second: Spine_middle
+  - first:
+      4: 400116
+    second: Spine_top
+  - first:
+      4: 400118
+    second: Tail
+  - first:
+      4: 400120
+    second: Tail_1
+  - first:
+      4: 400122
+    second: Tail_2
+  - first:
+      4: 400124
+    second: Tail_3
+  - first:
+      4: 400126
+    second: Tail_4
+  - first:
+      4: 400128
+    second: Tongue
+  - first:
+      4: 400130
+    second: Tongue_1
+  - first:
+      4: 400132
+    second: Tongue_2
+  - first:
+      4: 400134
+    second: Waist
+  - first:
+      4: 400136
+    second: Waist_armor_holder
+  - first:
+      74: 7400000
+    second: run_1
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -154,6 +434,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -170,41 +451,83 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run_1
+      takeName: run_1
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -214,14 +537,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 0d3c3fc0c27b84249be45b9a233d6226,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 0d3c3fc0c27b84249be45b9a233d6226, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

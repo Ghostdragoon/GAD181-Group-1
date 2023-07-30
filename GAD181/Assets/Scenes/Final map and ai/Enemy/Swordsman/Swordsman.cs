@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class Swordsman : MonoBehaviour
 {
     public GameObject SwordsmanObj;
@@ -12,6 +13,11 @@ public class Swordsman : MonoBehaviour
     public float attackInterval = 2f;
     public float attackTimer;
     public NavMeshAgent agent;
+    public GameObject slash;
+    public Transform Slashspace;
+
+    
+    
 
     public void Start()
     {
@@ -22,64 +28,39 @@ public class Swordsman : MonoBehaviour
 
     public void Update()
     {
+        
+        attackTimer += Time.deltaTime;
+
         distanceFromPlayer = Vector3.Distance(transform.position, Player.transform.position);
         if (distanceFromPlayer < 10)
         {
-            Debug.Log("Player is in range");
-            anim.SetBool("playerInRange", true);
-            Chase();
+            anim.SetBool("IsPatrolling", false);
+            anim.SetBool("playerInVision", true);
             agent.SetDestination(Player.transform.position);
-            
-            if (distanceFromPlayer < 2)
+
+            if (distanceFromPlayer < 3 && attackTimer >= attackInterval)
+                
             {
-                Attack();
-            }
-
-        }
-        else
-        {
-            anim.SetBool("playerInVision", false);
-            Debug.Log("Searching for player");
-            Patrol();
-        } 
-    }
-
-    public void Attack()
-    {
-        if (attackTimer >= attackInterval)
-        {
-            attackTimer = 0f;
-            anim.SetTrigger("Attack");
-            Debug.Log("Attacking");
-        }
-        else
-        {
-            attackTimer += Time.deltaTime;
-            Debug.Log("Waiting to attack");
-        }
-    }
-
-    public void Chase()
-    {
-        anim.SetBool("Player, true);
-    }
-
-    public void Patrol()
-    {
-        anim.SetBool("isChasing", false);
-    }
-}
-
-
-/*  if(rifleMan.Agent.remainingDistance < 0.2f)
-        {
-            if(waypointIndex < rifleMan.path.waypoints.Count - 1)
-            {
-                waypointIndex++;
+                anim.SetBool("PlayerInRange", true);
+                attackTimer = 0f;
+                anim.SetTrigger("SwordAttack");
+                Player.GetComponent<PlayerStats>().TakeDamage(10);
+                Instantiate(slash, Slashspace.transform.position, Quaternion.identity);
+                
             }
             else
             {
-                waypointIndex = 0;
+            anim.SetBool("PlayerInRange", false);
+            anim.SetBool("playerInVision", false);
+            anim.SetBool("IsPatrolling", true);
+            Debug.Log("Searching for player");
             }
-            rifleMan.Agent.SetDestination(rifleMan.path.waypoints[waypointIndex].position);
-        }*/
+
+        }
+    }
+
+}
+
+
+
+
