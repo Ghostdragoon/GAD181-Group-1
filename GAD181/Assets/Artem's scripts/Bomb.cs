@@ -60,6 +60,7 @@ public class Bomb : MonoBehaviour
             {
                 // Bomb explodes
                 Explode();
+                explosionEffect.SetActive(true);
             }
             else
             {
