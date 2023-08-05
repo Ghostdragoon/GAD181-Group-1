@@ -28,6 +28,7 @@ public class Wepon : MonoBehaviour
 
                 if (enemyHealth == true)
                 {
+                    Debug.Log(hit.transform.name);
                     enemyHealth.EnemyTakeDamage(damage);
                 }
             }
