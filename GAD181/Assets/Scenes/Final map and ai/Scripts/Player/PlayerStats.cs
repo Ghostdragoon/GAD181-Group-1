@@ -5,23 +5,24 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
     public int health;
-    public int maxHealth = 30;
+    public int maxHealth = 100;
     public int damage;
     public GameObject gameOverUI;
 
     public HealthBar healthBar;
+
     public void TakeDamage(int damage)
     {
         health -= damage;
         healthBar.SetHealth(health);
-    } 
+    }
 
     public void Start()
     {
+        gameOverUI.SetActive(false);
+
         health = maxHealth;
         healthBar.MaxHealth(maxHealth);
-
-        gameOverUI.SetActive(false);
     }
 
     public void Update()
