@@ -6,7 +6,7 @@ public class EquipGun : MonoBehaviour
 {
     public Transform PlayerTransform;
     public GameObject Gun;
-    public Camera Camera;
+    public GameObject Camera;
     public float range = 2f;
     public float open = 100f;
 
