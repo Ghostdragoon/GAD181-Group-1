@@ -8,6 +8,10 @@ public class Wepon : MonoBehaviour
 
     public GameObject playerCam;
 
+    public Transform gunBarrell;
+    public TrailRenderer bulletTrail;
+
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -21,6 +25,13 @@ public class Wepon : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit))
         {
+            var bullet = Instantiate(bulletTrail, gunBarrell.position, Quaternion.identity);
+            bullet.AddPosition(gunBarrell.position);
+            {
+                bullet.transform.position = transform.position + (playerCam.transform.forward * 200);
+            }
+
+
             if (hit.collider.tag == "Enemy")
             {
                 //Debug.Log(hit.transform.name);
