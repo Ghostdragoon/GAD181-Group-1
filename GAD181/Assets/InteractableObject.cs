@@ -8,31 +8,27 @@ public class InteractableObject : MonoBehaviour
     // Reference to the PlayerLook script
     public PlayerLook playerLook;
 
+    // Reference to the PauseMenu script to know if the game is paused
+    public PauseMenu pauseMenu;
+
     // This flag will tell if the player is near enough to interact
     private bool isPlayerNearby = false;
 
     private void Update()
     {
-        if (isPlayerNearby)
+        // Only change camera rotation if the game is not paused
+        if (!pauseMenu.IsPaused())
         {
-            // Interact code here, which should be called in MainController script
-            // So, no need to add anything here for now
-
-            // Disable camera rotation
-            playerLook.disableRotation = true;
-
-            // Show system cursor
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
-        {
-            // Enable camera rotation
-            playerLook.disableRotation = false;
-
-            // Hide system cursor
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            if (isPlayerNearby)
+            {
+                // Disable camera rotation
+                playerLook.disableRotation = true;
+            }
+            else
+            {
+                // Enable camera rotation
+                playerLook.disableRotation = false;
+            }
         }
     }
 
@@ -61,4 +57,6 @@ public class InteractableObject : MonoBehaviour
         return isPlayerNearby;
     }
 }
+
+
 

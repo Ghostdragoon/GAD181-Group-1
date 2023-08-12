@@ -13,6 +13,11 @@ public class Bomb : MonoBehaviour
     // Reference to the UI text element to display bomb status
     public Text statusText;
 
+    // Audio components
+    public AudioClip explosionSound;
+    public AudioClip defuseSound;
+    private AudioSource audioSource;
+
     // Static variable to keep track of the bomb status
     public static bool IsDefused = false;
 
@@ -27,6 +32,7 @@ public class Bomb : MonoBehaviour
         // Ensure explosion effect is initially disabled
         explosionEffect.SetActive(false);
         IsDefused = false; // Reset the status at the start of the scene
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -46,6 +52,7 @@ public class Bomb : MonoBehaviour
                 Debug.Log("Bomb defused!");
                 statusText.text = "Bomb status: Defused";
                 IsDefused = true;
+                audioSource.PlayOneShot(defuseSound);
                 gameObject.SetActive(false);
             }
             else
@@ -90,6 +97,7 @@ public class Bomb : MonoBehaviour
     {
         Debug.Log("Bomb exploded!");
         statusText.text = "Bomb status: Exploded";
+        audioSource.PlayOneShot(explosionSound);
 
         // Enable explosion effect
         explosionEffect.SetActive(true);
@@ -111,6 +119,7 @@ public class Bomb : MonoBehaviour
         explosionEffect.SetActive(false);
     }
 }
+
 
 
 

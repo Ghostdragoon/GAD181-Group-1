@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
@@ -10,8 +8,26 @@ public class PlayerLook : MonoBehaviour
     public float xSens = 30f;
     public float ySens = 30f;
 
-    // Flag to disable camera rotation
     public bool disableRotation = false;
+
+    private void Update()
+    {
+        HandleCursorLock();
+    }
+
+    private void HandleCursorLock()
+    {
+        if (disableRotation)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
 
     public void ProcessLook(Vector2 input)
     {
@@ -30,4 +46,9 @@ public class PlayerLook : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX * Time.deltaTime * xSens);
     }
 }
+
+
+
+
+
 
