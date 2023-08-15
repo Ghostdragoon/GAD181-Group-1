@@ -1411,10 +1411,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4629752262115116203, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4629752262115116204, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 2061600497}
+    - target: {fileID: 4629752262115116204, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
+      propertyPath: xSens
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629752262115116204, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
+      propertyPath: ySens
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4629752262115116204, guid: 4ee4c83bb8ff7ee499803f41099eb132, type: 3}
       propertyPath: disableRotation
       value: 1

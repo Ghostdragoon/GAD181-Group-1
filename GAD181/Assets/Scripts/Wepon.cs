@@ -10,6 +10,7 @@ public class Wepon : MonoBehaviour
 
     public Transform gunBarrell;
     public TrailRenderer bulletTrail;
+    public ParticleSystem muzzleFlash;
 
 
     void Update()
@@ -17,6 +18,7 @@ public class Wepon : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            muzzleFlash.Play();
         }
     }
 
