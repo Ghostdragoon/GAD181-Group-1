@@ -19,7 +19,7 @@ public class EquipGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown("n"))
         {
             UnequipObject();
             Shoot();
