@@ -5,7 +5,7 @@ using UnityEngine;
 public class EquipGunNew : MonoBehaviour
 {
 
-    public PlayerShoot gunScript;
+    public FinalShoot gunScript;
     public Rigidbody rb;
     public BoxCollider boxCollider;
     public Transform player;
