@@ -5,7 +5,7 @@ using UnityEngine;
 public class EquipGunNew : MonoBehaviour
 {
 
-    public PlayerShoot gunScript;
+    public FinalShoot gunScript;
     public Rigidbody rb;
     public BoxCollider boxCollider;
     public Transform player;
@@ -54,7 +54,7 @@ public class EquipGunNew : MonoBehaviour
 
         transform.SetParent(gunHolder);
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.Euler(Vector3.zero);
+        transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 0));
         transform.localScale = Vector3.one;
 
         rb.isKinematic = true;
