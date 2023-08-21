@@ -24,7 +24,7 @@ public class FinalShoot : MonoBehaviour
     bool readyToShoot; 
     bool reloading;
 
-    public Camera fpsCam;
+    public GameObject fpsCam;
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
