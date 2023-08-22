@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final map and ai/Final Map.unity
     guid: 1f54537c8db318f48a0ee33e5892b07b
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: e1128180551a0094989d13158c48ea51
   m_configObjects: {}
