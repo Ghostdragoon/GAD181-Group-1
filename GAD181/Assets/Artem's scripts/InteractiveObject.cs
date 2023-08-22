@@ -30,11 +30,6 @@ public class InteractiveObject : MonoBehaviour
                 uiCanvas.enabled = !uiCanvas.enabled;
             }
         }
-        else if (uiCanvas.enabled)
-        {
-            // Player is not in range, but UI is still active
-            // Hide UI
-            uiCanvas.enabled = false;
-        }
+      
     }
 }
