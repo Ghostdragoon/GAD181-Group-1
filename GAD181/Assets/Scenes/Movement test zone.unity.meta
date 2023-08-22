@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:GAD181/Assets/Scenes/Movement test zone.unity.meta
 guid: 7a6ca339236c53744bb34cec428b2f0a
 ========
 guid: 066c24ead18fa9343abc88e4835d6ebe
 >>>>>>>> main:GAD181/Assets/LowPolyWeapons/LowPolyWeapons_2020.3_URP_v1.12.unitypackage.meta
+=======
+guid: 7a6ca339236c53744bb34cec428b2f0a
+>>>>>>> 807a1bd94bae8a0a5ca895c9439bca5df2135dc2
 DefaultImporter:
   externalObjects: {}
   userData: 

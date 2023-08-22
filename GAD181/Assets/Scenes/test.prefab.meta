@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:GAD181/Assets/Scenes/test.prefab.meta
 guid: 87911ccbae43f3243abdce261a9a5137
 PrefabImporter:
@@ -6,6 +7,10 @@ PrefabImporter:
 guid: 902dae6c503da16488b173caa80525e4
 DefaultImporter:
 >>>>>>>> main:GAD181/Assets/LowPolyWeapons/LowPolyWeapons_2020.3_HDRP_v1.12.unitypackage.meta
+=======
+guid: 87911ccbae43f3243abdce261a9a5137
+PrefabImporter:
+>>>>>>> 807a1bd94bae8a0a5ca895c9439bca5df2135dc2
   externalObjects: {}
   userData: 
   assetBundleName: 
