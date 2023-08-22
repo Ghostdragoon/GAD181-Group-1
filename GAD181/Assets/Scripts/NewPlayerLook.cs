@@ -6,6 +6,8 @@ public class NewPlayerLook : MonoBehaviour
 {
     public float mouseSens = 100f;
     float xRotation = 0f;
+    float yRotation = 0f;
+    
     public Transform playerTransform;
 
     // Start is called before the first frame update
@@ -23,7 +25,10 @@ public class NewPlayerLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        yRotation += mouseX;
+
+
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
         playerTransform.Rotate(Vector3.up * mouseX);
     }
 }
