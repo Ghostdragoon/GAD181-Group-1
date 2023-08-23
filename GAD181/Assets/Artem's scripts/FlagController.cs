@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class FlagController : MonoBehaviour
 {
     public Text flagStatusText;
+    public GameObject sphereBeneathFlag; // Reference to the sphere
     public float captureTime = 5f;
 
     // Static variable to keep track of the flag status
@@ -27,6 +28,10 @@ public class FlagController : MonoBehaviour
             {
                 flagStatusText.text = "Flag Captured!";
                 IsCaptured = true;
+
+                // Change the color of the sphere beneath the flag to green
+                sphereBeneathFlag.GetComponent<Renderer>().material.color = Color.green;
+
                 gameObject.SetActive(false);  // Deactivate the flag
             }
             else
@@ -69,4 +74,5 @@ public class FlagController : MonoBehaviour
         }
     }
 }
+
 

@@ -4,23 +4,17 @@ using UnityEngine.UI;
 
 public class Bomb : MonoBehaviour
 {
-    public float defuseTime = 5f; // Time required to defuse the bomb
-    public float explosionTime = 10f; // Time until the bomb explodes
-
-    // Reference to the explosion effect object in the scene
+    public float defuseTime = 5f;
+    public float explosionTime = 10f;
     public GameObject explosionEffect;
-
-    // Reference to the UI text element to display bomb status
     public Text statusText;
-
-    // Audio components
     public AudioClip explosionSound;
     public AudioClip defuseSound;
+    public Slider bombTimerSlider;
+    public Text timerText;
+
     private AudioSource audioSource;
-
-    // Static variable to keep track of the bomb status
     public static bool IsDefused = false;
-
     private Collider player = null;
     private float currentDefuseTime = 0f;
     private float currentExplosionTime = 0f;
@@ -29,18 +23,19 @@ public class Bomb : MonoBehaviour
 
     private void Start()
     {
-        // Ensure explosion effect is initially disabled
         explosionEffect.SetActive(false);
-        IsDefused = false; // Reset the status at the start of the scene
+        IsDefused = false;
         audioSource = GetComponent<AudioSource>();
+
+        bombTimerSlider.maxValue = explosionTime;
+        bombTimerSlider.value = explosionTime;
     }
 
     private void Update()
     {
-        // Check if E key is pressed and player is near
         if (player != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            isDefusing = !isDefusing; // Toggle defusing status
+            isDefusing = !isDefusing;
         }
 
         if (isDefusing)
@@ -48,8 +43,6 @@ public class Bomb : MonoBehaviour
             currentDefuseTime += Time.deltaTime;
             if (currentDefuseTime >= defuseTime)
             {
-                // Defusing successful
-                Debug.Log("Bomb defused!");
                 statusText.text = "Bomb status: Defused";
                 IsDefused = true;
                 audioSource.PlayOneShot(defuseSound);
@@ -59,13 +52,15 @@ public class Bomb : MonoBehaviour
             {
                 statusText.text = "Bomb status: Defusing";
             }
+
+            bombTimerSlider.value = defuseTime - currentDefuseTime;
+            timerText.text = (defuseTime - currentDefuseTime).ToString("0.0") + "s";
         }
         else
         {
             currentExplosionTime += Time.deltaTime;
             if (currentExplosionTime >= explosionTime && !hasExploded)
             {
-                // Bomb explodes
                 Explode();
                 explosionEffect.SetActive(true);
             }
@@ -73,6 +68,9 @@ public class Bomb : MonoBehaviour
             {
                 statusText.text = "Bomb status: Armed";
             }
+
+            bombTimerSlider.value = explosionTime - currentExplosionTime;
+            timerText.text = (explosionTime - currentExplosionTime).ToString("0.0") + "s";
         }
     }
 
@@ -99,26 +97,20 @@ public class Bomb : MonoBehaviour
         statusText.text = "Bomb status: Exploded";
         audioSource.PlayOneShot(explosionSound);
 
-        // Enable explosion effect
         explosionEffect.SetActive(true);
-
-        // Unparent the explosion effect
         explosionEffect.transform.parent = null;
 
-        // Schedule to disable explosion effect after 2 seconds
         Invoke("DisableExplosionEffect", 2f);
-
         Destroy(gameObject);
         hasExploded = true;
     }
 
-
     private void DisableExplosionEffect()
     {
-        // Disable explosion effect
         explosionEffect.SetActive(false);
     }
 }
+
 
 
 
