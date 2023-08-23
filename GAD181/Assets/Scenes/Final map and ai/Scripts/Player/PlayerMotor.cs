@@ -14,8 +14,9 @@ public class PlayerMotor : MonoBehaviour
     public bool lerpCrouch;
     public bool crouching;
     public float crouchTimer;
-    public bool sprinting; 
-    
+    public bool sprinting;
+
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
