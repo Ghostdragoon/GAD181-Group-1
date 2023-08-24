@@ -23181,7 +23181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982555186624939988, guid: 6d681f9dc76e5164abd3ee97d597a9a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.778
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4982555186624939988, guid: 6d681f9dc76e5164abd3ee97d597a9a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63209,15 +63209,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3945062367059327309, guid: b830a0956cae2134690b3e62243c9988, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.55
+      value: 27.29
       objectReference: {fileID: 0}
     - target: {fileID: 3945062367059327309, guid: b830a0956cae2134690b3e62243c9988, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: 3945062367059327309, guid: b830a0956cae2134690b3e62243c9988, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.17
+      value: -17.29
       objectReference: {fileID: 0}
     - target: {fileID: 3945062367059327309, guid: b830a0956cae2134690b3e62243c9988, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63250,6 +63250,10 @@ PrefabInstance:
     - target: {fileID: 7051469222073617683, guid: b830a0956cae2134690b3e62243c9988, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051469222073617683, guid: b830a0956cae2134690b3e62243c9988, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8931202860898547466, guid: b830a0956cae2134690b3e62243c9988, type: 3}
       propertyPath: xSens
@@ -63304,9 +63308,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &8967562376674161239
 GameObject:
