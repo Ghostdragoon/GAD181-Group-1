@@ -32,7 +32,6 @@ public class FinalShoot : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public TrailRenderer bulletTrail;
     public TextMeshProUGUI text;
-    public AudioSource shooot;
 
     private void Awake()
     {
@@ -77,7 +76,6 @@ public class FinalShoot : MonoBehaviour
         {
             var bullet = Instantiate(bulletTrail, attackPoint.position, Quaternion.identity);
             muzzleFlash.Play();
-            shooot.Play();
             bullet.AddPosition(attackPoint.position);
             {
                 bullet.transform.position = transform.position + (fpsCam.transform.forward * 200);
