@@ -9,7 +9,7 @@ public class InteractableObject : MonoBehaviour
     public PlayerLook playerLook;
 
     // Reference to the PauseMenu script to know if the game is paused
-    public PauseMenu pauseMenu;
+    public PauseMenuForPlayerLook1 pauseMenu;
 
     // This flag will tell if the player is near enough to interact
     private bool isPlayerNearby = false;
