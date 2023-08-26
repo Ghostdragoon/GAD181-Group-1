@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro; // Use TextMesh Pro namespace
 using UnityEngine.UI;
 
 public class Bomb : MonoBehaviour
@@ -7,11 +8,11 @@ public class Bomb : MonoBehaviour
     public float defuseTime = 5f;
     public float explosionTime = 10f;
     public GameObject explosionEffect;
-    public Text statusText;
+    public TextMeshProUGUI statusText;
     public AudioClip explosionSound;
     public AudioClip defuseSound;
-    public Slider bombTimerSlider;
-    public Text timerText;
+    public Slider bombDefuseSlider; // Renamed for clarity
+    public TextMeshProUGUI timerText;
 
     private AudioSource audioSource;
     public static bool IsDefused = false;
@@ -27,8 +28,8 @@ public class Bomb : MonoBehaviour
         IsDefused = false;
         audioSource = GetComponent<AudioSource>();
 
-        bombTimerSlider.maxValue = explosionTime;
-        bombTimerSlider.value = explosionTime;
+        bombDefuseSlider.maxValue = defuseTime;
+        bombDefuseSlider.value = 0; // Start from 0, representing no defuse progress
     }
 
     private void Update()
@@ -53,7 +54,7 @@ public class Bomb : MonoBehaviour
                 statusText.text = "Bomb status: Defusing";
             }
 
-            bombTimerSlider.value = defuseTime - currentDefuseTime;
+            bombDefuseSlider.value = currentDefuseTime; // Set the defuse progress
             timerText.text = (defuseTime - currentDefuseTime).ToString("0.0") + "s";
         }
         else
@@ -69,7 +70,6 @@ public class Bomb : MonoBehaviour
                 statusText.text = "Bomb status: Armed";
             }
 
-            bombTimerSlider.value = explosionTime - currentExplosionTime;
             timerText.text = (explosionTime - currentExplosionTime).ToString("0.0") + "s";
         }
     }
@@ -110,6 +110,9 @@ public class Bomb : MonoBehaviour
         explosionEffect.SetActive(false);
     }
 }
+
+
+
 
 
 
