@@ -3,7 +3,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
-    public PlayerLook playerLook;  // Reference to the PlayerLook script
+    public NewPlayerLook playerLook;  // Reference updated to NewPlayerLook
 
     private bool isPaused = false;
 
@@ -28,8 +28,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
 
-        // Lock the camera
-        playerLook.disableRotation = true;
+        // Disable player looking
+        playerLook.enabled = false;
 
         // Make the mouse cursor visible
         Cursor.lockState = CursorLockMode.None;
@@ -42,8 +42,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
 
-        // Enable the camera movement
-        playerLook.disableRotation = false;
+        // Enable player looking
+        playerLook.enabled = true;
 
         // Hide the cursor and lock it
         Cursor.lockState = CursorLockMode.Locked;
@@ -55,12 +55,13 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit();
     }
+
     public bool IsPaused()
     {
         return isPaused;
     }
-
 }
+
 
 
 

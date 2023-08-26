@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro; // Use TextMesh Pro namespace
 using UnityEngine.UI;
 
@@ -11,7 +14,7 @@ public class Bomb : MonoBehaviour
     public TextMeshProUGUI statusText;
     public AudioClip explosionSound;
     public AudioClip defuseSound;
-    public Slider bombDefuseSlider; // Renamed for clarity
+    public Slider bombDefuseSlider;
     public TextMeshProUGUI timerText;
 
     private AudioSource audioSource;
@@ -29,7 +32,7 @@ public class Bomb : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         bombDefuseSlider.maxValue = defuseTime;
-        bombDefuseSlider.value = 0; // Start from 0, representing no defuse progress
+        bombDefuseSlider.value = 0;
     }
 
     private void Update()
@@ -47,14 +50,16 @@ public class Bomb : MonoBehaviour
                 statusText.text = "Bomb status: Defused";
                 IsDefused = true;
                 audioSource.PlayOneShot(defuseSound);
-                gameObject.SetActive(false);
+
+                float delayForDeactivation = defuseSound.length + 0.5f; // Extra half a second for safe measure
+                Invoke("DeactivateBomb", delayForDeactivation);
             }
             else
             {
                 statusText.text = "Bomb status: Defusing";
             }
 
-            bombDefuseSlider.value = currentDefuseTime; // Set the defuse progress
+            bombDefuseSlider.value = currentDefuseTime;
             timerText.text = (defuseTime - currentDefuseTime).ToString("0.0") + "s";
         }
         else
@@ -63,7 +68,6 @@ public class Bomb : MonoBehaviour
             if (currentExplosionTime >= explosionTime && !hasExploded)
             {
                 Explode();
-                explosionEffect.SetActive(true);
             }
             else
             {
@@ -101,15 +105,27 @@ public class Bomb : MonoBehaviour
         explosionEffect.transform.parent = null;
 
         Invoke("DisableExplosionEffect", 2f);
-        Destroy(gameObject);
+        Invoke("DestroyBomb", explosionSound.length + 0.5f);
         hasExploded = true;
+    }
+
+    private void DeactivateBomb()
+    {
+        gameObject.SetActive(false);
     }
 
     private void DisableExplosionEffect()
     {
         explosionEffect.SetActive(false);
     }
+
+    private void DestroyBomb()
+    {
+        Destroy(gameObject);
+    }
 }
+
+
 
 
 
