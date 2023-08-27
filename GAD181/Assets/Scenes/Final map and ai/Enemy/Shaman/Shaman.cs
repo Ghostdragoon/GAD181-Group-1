@@ -15,6 +15,8 @@ public class Shaman : MonoBehaviour
     public GameObject Meteor;
 
 
+
+
     // raycast to find game object tagged player 
     public void Start()
     {
@@ -40,17 +42,20 @@ public class Shaman : MonoBehaviour
                 castTimer = 0f;
                 anim.SetTrigger("castSpell");
                 Instantiate(Meteor, Player.transform.position, Quaternion.identity); 
+               
             }
             else
             {
                 Flame.SetActive(true);
-                castTimer += Time.deltaTime; 
+                castTimer += Time.deltaTime;
+                
             }
         }
         else
         {
             Flame.SetActive(false);
             anim.SetBool("playerInRange", false);
+            
         }
     }
 

@@ -33,7 +33,6 @@ public class Swordsman : MonoBehaviour
         distanceFromPlayer = Vector3.Distance(transform.position, Player.transform.position);
         if (distanceFromPlayer < 10)
         {
-            anim.SetBool("IsPatrolling", false);
             anim.SetBool("playerInVision", true);
             agent.SetDestination(Player.transform.position);
 
@@ -51,7 +50,6 @@ public class Swordsman : MonoBehaviour
             {
             anim.SetBool("PlayerInRange", false);
             anim.SetBool("playerInVision", false);
-            anim.SetBool("IsPatrolling", true);
             Debug.Log("Searching for player");
             }
 
