@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 679838216020327270, guid: 82464bf1d17aa7a43baac15566b10038, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 679838216020327270, guid: 82464bf1d17aa7a43baac15566b10038, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5010988637570506993, guid: 82464bf1d17aa7a43baac15566b10038, type: 3}
       propertyPath: m_Name
       value: Tutorial Level

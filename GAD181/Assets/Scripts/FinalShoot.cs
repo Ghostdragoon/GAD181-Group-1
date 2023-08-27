@@ -33,6 +33,7 @@ public class FinalShoot : MonoBehaviour
     public TrailRenderer bulletTrail;
     public TextMeshProUGUI text;
     public AudioSource shooot;
+    public Animator animator;
 
     private void Awake()
     {
@@ -113,11 +114,15 @@ public class FinalShoot : MonoBehaviour
     private void Reload()
     {
         reloading = true;
+        animator.SetBool("Reloading", true);
+        
         Invoke("ReloadFinished", reloadTime);
+
     }
     private void ReloadFinished()
     {
         bulletsLeft = magazineSize;
         reloading = false;
+        animator.SetBool("Reloading", false);
     }
 }
