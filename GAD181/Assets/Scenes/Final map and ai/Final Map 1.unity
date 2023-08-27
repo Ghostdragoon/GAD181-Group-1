@@ -1133,6 +1133,11 @@ TrailRenderer:
   m_CorrespondingSourceObject: {fileID: 4339369539792412161, guid: 7117f9a07b6214249940a10cd451cd79, type: 3}
   m_PrefabInstance: {fileID: 162378499}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &165850217 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 62476296963497196, guid: d79ae4a417b98ad499e2f68099b70c17, type: 3}
+  m_PrefabInstance: {fileID: 534923855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &183953606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3231,7 +3236,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 92ff1a44c6b43f241aeb17a8c407ee20, type: 3}
     - target: {fileID: 464647040, guid: b675e279ac7b02e4095dc555edb72e8d, type: 3}
       propertyPath: explosionTime
-      value: 4.46
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 464647040, guid: b675e279ac7b02e4095dc555edb72e8d, type: 3}
       propertyPath: bombDefuseSlider
@@ -6848,8 +6853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteUI: {fileID: 4949804988288280262}
-  playerLook: {fileID: 0}
-  canvas1: {fileID: 0}
+  playerLook: {fileID: 442565243}
+  canvas1: {fileID: 165850217}
   canvas2: {fileID: 1415120901}
 --- !u!1 &4949804987345728479
 GameObject:
