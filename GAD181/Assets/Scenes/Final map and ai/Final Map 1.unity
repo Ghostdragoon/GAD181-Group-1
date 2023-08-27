@@ -1525,6 +1525,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8094443092370942473, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094443092838292836, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8094443093023513987, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -1576,6 +1584,36 @@ PrefabInstance:
     - target: {fileID: 8094443093023513989, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094443093442922300, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_text
+      value: 'quit
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094443093442922300, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f0270725322c7de43b4690ec3e3081e2, type: 2}
+    - target: {fileID: 8094443093442922300, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3629579376886739592, guid: f0270725322c7de43b4690ec3e3081e2, type: 2}
+    - target: {fileID: 8094443093442922301, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094443093442922301, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094443093442922301, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094443093442922301, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8140a4d1b9b6a7e4abe686b0bb2a6580, type: 3}
