@@ -9,7 +9,7 @@ public class TutorialExit : MonoBehaviour
     {
         if (Player.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
             
     }

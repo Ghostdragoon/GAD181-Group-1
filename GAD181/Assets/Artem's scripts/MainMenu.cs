@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("New Tutorial button was clicked!");
 
         // Load the tutorial scene when the "New Tutorial" button is clicked
-        SceneManager.LoadScene("New Tutorial");
+        SceneManager.LoadScene("Final Tutorial");
     }
 }
 

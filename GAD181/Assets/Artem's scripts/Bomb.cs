@@ -17,7 +17,8 @@ public class Bomb : MonoBehaviour
     public TextMeshProUGUI timerText;
     public GameObject gameOverUI; // Reference to the GameOver UI canvas
 
-    private AudioSource audioSource;
+    private AudioSource mainAudioSource;
+    private AudioSource defuseAudioSource;
     public static bool IsDefused = false;
     private Collider player = null;
     private float currentDefuseTime = 0f;
@@ -29,7 +30,8 @@ public class Bomb : MonoBehaviour
     {
         explosionEffect.SetActive(false);
         IsDefused = false;
-        audioSource = GetComponent<AudioSource>();
+        mainAudioSource = GetComponent<AudioSource>();
+        defuseAudioSource = gameObject.AddComponent<AudioSource>(); // Create a separate AudioSource for the defuse sound
         gameOverUI.SetActive(false); // Ensure game over UI is hidden at start
 
         bombDefuseSlider.maxValue = defuseTime;
@@ -43,13 +45,13 @@ public class Bomb : MonoBehaviour
             isDefusing = !isDefusing;
             if (isDefusing)
             {
-                audioSource.loop = true;
-                audioSource.clip = defusingProcessSound;
-                audioSource.Play();
+                mainAudioSource.loop = true;
+                mainAudioSource.clip = defusingProcessSound;
+                mainAudioSource.Play();
             }
             else
             {
-                audioSource.Stop();
+                mainAudioSource.Stop();
             }
         }
 
@@ -60,11 +62,8 @@ public class Bomb : MonoBehaviour
             {
                 statusText.text = "Bomb status: Defused";
                 IsDefused = true;
-                audioSource.Stop();
-                audioSource.PlayOneShot(defuseSound);
-
-                float delayForDeactivation = defuseSound.length + 0.5f;
-                Invoke("DeactivateBomb", delayForDeactivation);
+                mainAudioSource.Stop();
+                defuseAudioSource.PlayOneShot(defuseSound); // Play defuse sound on a separate AudioSource
             }
             else
             {
@@ -104,7 +103,7 @@ public class Bomb : MonoBehaviour
         {
             player = null;
             isDefusing = false;
-            audioSource.Stop();
+            mainAudioSource.Stop();
         }
     }
 
@@ -112,7 +111,7 @@ public class Bomb : MonoBehaviour
     {
         Debug.Log("Bomb exploded!");
         statusText.text = "Bomb status: Exploded";
-        audioSource.PlayOneShot(explosionSound);
+        mainAudioSource.PlayOneShot(explosionSound);
 
         explosionEffect.SetActive(true);
         explosionEffect.transform.parent = null;
@@ -135,16 +134,12 @@ public class Bomb : MonoBehaviour
         Cursor.visible = false; // Hide the cursor
     }
 
-    private void DeactivateBomb()
-    {
-        gameObject.SetActive(false);
-    }
-
     private void DisableExplosionEffect()
     {
         explosionEffect.SetActive(false);
     }
 }
+
 
 
 
