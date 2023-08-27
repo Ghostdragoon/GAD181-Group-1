@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using TMPro; // Use TextMesh Pro namespace
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Bomb : MonoBehaviour
 {
@@ -14,8 +12,10 @@ public class Bomb : MonoBehaviour
     public TextMeshProUGUI statusText;
     public AudioClip explosionSound;
     public AudioClip defuseSound;
+    public AudioClip defusingProcessSound;
     public Slider bombDefuseSlider;
     public TextMeshProUGUI timerText;
+    public GameObject gameOverUI; // Reference to the GameOver UI canvas
 
     private AudioSource audioSource;
     public static bool IsDefused = false;
@@ -30,6 +30,7 @@ public class Bomb : MonoBehaviour
         explosionEffect.SetActive(false);
         IsDefused = false;
         audioSource = GetComponent<AudioSource>();
+        gameOverUI.SetActive(false); // Ensure game over UI is hidden at start
 
         bombDefuseSlider.maxValue = defuseTime;
         bombDefuseSlider.value = 0;
@@ -40,6 +41,16 @@ public class Bomb : MonoBehaviour
         if (player != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
             isDefusing = !isDefusing;
+            if (isDefusing)
+            {
+                audioSource.loop = true;
+                audioSource.clip = defusingProcessSound;
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.Stop();
+            }
         }
 
         if (isDefusing)
@@ -49,9 +60,10 @@ public class Bomb : MonoBehaviour
             {
                 statusText.text = "Bomb status: Defused";
                 IsDefused = true;
+                audioSource.Stop();
                 audioSource.PlayOneShot(defuseSound);
 
-                float delayForDeactivation = defuseSound.length + 0.5f; // Extra half a second for safe measure
+                float delayForDeactivation = defuseSound.length + 0.5f;
                 Invoke("DeactivateBomb", delayForDeactivation);
             }
             else
@@ -92,6 +104,7 @@ public class Bomb : MonoBehaviour
         {
             player = null;
             isDefusing = false;
+            audioSource.Stop();
         }
     }
 
@@ -105,8 +118,21 @@ public class Bomb : MonoBehaviour
         explosionEffect.transform.parent = null;
 
         Invoke("DisableExplosionEffect", 2f);
-        Invoke("DestroyBomb", explosionSound.length + 0.5f);
         hasExploded = true;
+
+        // Stop the game and show the game over UI
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None; // Unlock the cursor
+        Cursor.visible = true; // Show the cursor
+        gameOverUI.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; // Resume the game time
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor for gameplay
+        Cursor.visible = false; // Hide the cursor
     }
 
     private void DeactivateBomb()
@@ -118,12 +144,10 @@ public class Bomb : MonoBehaviour
     {
         explosionEffect.SetActive(false);
     }
-
-    private void DestroyBomb()
-    {
-        Destroy(gameObject);
-    }
 }
+
+
+
 
 
 
